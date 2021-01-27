@@ -1,0 +1,19 @@
+.table {
+  position: relative;
+  height: calc(100% - 90px);
+  width: 100%;
+  flex-grow: 1;
+}
+.table__wrapper {
+  user-select: none;
+  overflow-x: auto;
+  overflow-y: hidden;
+  position: absolute;
+  padding: 5px;
+  padding-right: 8px;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  white-space: nowrap;
+}
