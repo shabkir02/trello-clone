@@ -30,7 +30,7 @@ const App = () => {
     },
     
     {
-     label: 'Надо выполнить',
+     label: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque nostrum labore m',
      tasks: [
         {
           name: 'Vue.js',
@@ -46,8 +46,20 @@ const App = () => {
         },
         {
          name: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque nostrum labore mollitia soluta, impedit, expedita tenetur in quasi sed sunt amet aliquid dolor nihil natus sit magnam voluptatum, reiciendis iure.',
-         id: 767677
-        }
+         id: 54353
+        },
+        {
+          name: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque nostrum labore mollitia soluta, impedit, expedita tenetur in quasi sed sunt amet aliquid dolor nihil natus sit magnam voluptatum, reiciendis iure.',
+          id: 76454357677
+         },
+         {
+          name: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque nostrum labore mollitia soluta, impedit, expedita tenetur in quasi sed sunt amet aliquid dolor nihil natus sit magnam voluptatum, reiciendis iure.',
+          id: 76743677
+         },
+         {
+          name: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque nostrum labore mollitia soluta, impedit, expedita tenetur in quasi sed sunt amet aliquid dolor nihil natus sit magnam voluptatum, reiciendis iure.',
+          id: 767312677
+         }
      ],
      id: 2
     }

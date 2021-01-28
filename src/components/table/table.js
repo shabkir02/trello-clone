@@ -10,7 +10,7 @@ const Table = ({data, addNewCard}) => {
   const [isActive, setIsActive] = useState(false);
   const [label, setLabel] = useState('');
 
-  const toggleAddNewCard = () => {
+  const toggleAddNewCard = (e) => {
     setIsActive(!isActive)
   }
 

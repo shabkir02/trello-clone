@@ -11,7 +11,7 @@
   min-height: 78px;
   background-color: #ebecf0;
   border-radius: 3px;
-  padding: 8px;
+  padding: 8px 8px 6px;
   cursor: pointer;
   max-height: 100%;
 }
@@ -61,7 +61,7 @@
   justify-content: space-between;
   align-items: center;
   vertical-align: bottom;
-  height: 38px;
+  min-height: 38px;
   margin-top: 10px;
 }
 .card__add {
@@ -107,3 +107,58 @@
   font-size: 14px;
   box-shadow: 0 1px 0 rgba(9,30,66,.25);
 }
+.card__item:hover {
+  background-color: rgb(245, 245, 245);
+}
+
+.card__add-form {
+  width: 100%;
+}
+.card__add-wrapper {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding: 6px 8px 2px;
+  border-radius: 3px;
+  background-color: #fff;
+}
+.card__add-textarea {
+  width: 100%;
+  min-height: 60px;
+  border: none;
+  resize: none;
+  font-size: 14px;
+}
+.card__add-textarea:focus {
+  outline: none;
+}
+.card__add-btn-wrapper {
+  margin-top: 2px;
+  display: flex;
+  align-items: center;
+}
+
+.card__add-btn {
+  height: 32px;
+  min-width: 50%;
+  border: none;
+  border-radius: 3px;
+  background-color: rgb(101, 139, 43);
+  color: #fff;
+  margin-top: 4px;
+  font-size: 14px;
+  padding: 0 10px;
+}
+.card__add-btn:focus {
+  outline: none;
+}
+.card__add-btn:hover {
+  background-color: rgb(89, 122, 39);
+}
+
+.card__add-btn-wrapper .material-icons {
+  font-size: 24px;
+  margin-left: 8px;
+  margin-top: 3px;
+}
+
