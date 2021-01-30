@@ -2,9 +2,10 @@ import React, {useState} from 'react';
 
 import './card.css';
 
-const Card = ({label, tasks}) => {
+const Card = ({label, tasks, id, addNewTask}) => {
 
   const [isActive, setIsActive] = useState(false);
+  const [textareaValue, setTextareaValue] = useState('');
 
   const toggleActive = () => {
     setIsActive(!isActive);
@@ -12,6 +13,11 @@ const Card = ({label, tasks}) => {
 
   const onSubmit = (e) => {
     e.preventDefault();
+    if (textareaValue === '') {
+      return
+    }
+    addNewTask(textareaValue, id);
+    setTextareaValue('');
   }
 
   return (
@@ -68,6 +74,9 @@ const Card = ({label, tasks}) => {
                   <textarea
                     className='card__add-textarea'
                     placeholder='Ввести заголовок для этой карточки'
+                    spellCheck='false'
+                    onChange={e => setTextareaValue(e.target.value)}
+                    value={textareaValue}
                   ></textarea>
                 </div>
               </div>

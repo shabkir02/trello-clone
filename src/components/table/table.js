@@ -5,7 +5,7 @@ import Card from '../card';
 import './table.css';
 import './create-card.css';
 
-const Table = ({data, addNewCard}) => {
+const Table = ({data, addNewCard, addNewTask}) => {
 
   const [isActive, setIsActive] = useState(false);
   const [label, setLabel] = useState('');
@@ -21,7 +21,7 @@ const Table = ({data, addNewCard}) => {
     }
     addNewCard(label)
     setLabel('');
-    // setIsActive(false);
+    setIsActive(false);
   }
 
   const clazz = isActive ? ' active' : '';
@@ -35,6 +35,7 @@ const Table = ({data, addNewCard}) => {
             tasks={item.tasks}
             id={item.id}
             key={item.id}
+            addNewTask={(textareaValue) => addNewTask(textareaValue, item.id)}
           />
         ))}
         <div className={`create-card${clazz}`}>

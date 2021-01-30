@@ -63,9 +63,9 @@ const App = () => {
      ],
      id: 2
     }
-   ])
+  ])
 
-   const addNewCard = (label) => {
+  const addNewCard = (label) => {
     const newCard = {
       label: label,
       tasks: [],
@@ -75,7 +75,21 @@ const App = () => {
     const newArr = [...data, newCard];
 
     setData(newArr);
-   }
+  }
+
+  const addNewTask = (textareaValue, id) => {
+    const newTask = {
+      name: textareaValue,
+      id: Math.floor(Math.random() * 10000)
+    }
+
+    const index = data.findIndex(elem => elem.id === id);
+    const old = data[index];
+    const newItem = {...old, tasks: [...old.tasks, newTask]};
+
+    const newArr = [...data.slice(0, index), newItem, ...data.slice(index + 1)];
+    setData(newArr);
+  }
 
   return (
     <div className='app green'>
@@ -84,6 +98,7 @@ const App = () => {
       <Table 
         data={data}
         addNewCard={addNewCard}
+        addNewTask={(textareaValue, id) => addNewTask(textareaValue, id)}
       />
     </div>
   )
