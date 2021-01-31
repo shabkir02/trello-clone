@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 
 import Card from '../card';
+import TableMenu from '../table-menu';
 
 import './table.css';
 import './create-card.css';
@@ -10,7 +11,7 @@ const Table = ({data, addNewCard, addNewTask}) => {
   const [isActive, setIsActive] = useState(false);
   const [label, setLabel] = useState('');
 
-  const toggleAddNewCard = (e) => {
+  const toggleAddNewCard = () => {
     setIsActive(!isActive)
   }
 
@@ -79,6 +80,7 @@ const Table = ({data, addNewCard, addNewTask}) => {
             )}
         </div>
       </div>
+      <TableMenu/>
     </div>
   )
 }
