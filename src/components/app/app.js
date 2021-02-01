@@ -27,43 +27,18 @@ const App = () => {
        }
      ],
      id: 1
-    },
-    
-    {
-     label: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque nostrum labore m',
-     tasks: [
-        {
-          name: 'Vue.js',
-          id: 5435345
-        },
-        {
-         name: 'React',
-         id: 98798
-        },
-        {
-         name: 'App',
-         id: 989890
-        },
-        {
-         name: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque nostrum labore mollitia soluta, impedit, expedita tenetur in quasi sed sunt amet aliquid dolor nihil natus sit magnam voluptatum, reiciendis iure.',
-         id: 54353
-        },
-        {
-          name: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque nostrum labore mollitia soluta, impedit, expedita tenetur in quasi sed sunt amet aliquid dolor nihil natus sit magnam voluptatum, reiciendis iure.',
-          id: 76454357677
-         },
-         {
-          name: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque nostrum labore mollitia soluta, impedit, expedita tenetur in quasi sed sunt amet aliquid dolor nihil natus sit magnam voluptatum, reiciendis iure.',
-          id: 76743677
-         },
-         {
-          name: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque nostrum labore mollitia soluta, impedit, expedita tenetur in quasi sed sunt amet aliquid dolor nihil natus sit magnam voluptatum, reiciendis iure.',
-          id: 767312677
-         }
-     ],
-     id: 2
     }
+  ]);
+  const [bgColorCol] = useState([
+    {backgroundColor: 'rgb(0, 121, 191)'},
+    {backgroundColor: 'rgb(210, 144, 52)'},
+    {backgroundColor: 'rgb(115, 160, 47)'},
+    {backgroundColor: 'rgb(176, 70, 50)'},
+    {backgroundColor: 'rgb(0, 174, 204)'},
+    {backgroundColor: 'rgb(205, 90, 145)'}
   ])
+  const [activeMenu, setActiveMenu] = useState(false)
+  const [boardColor, setBoardColor] = useState(null)
 
   const addNewCard = (label) => {
     const newCard = {
@@ -91,14 +66,27 @@ const App = () => {
     setData(newArr);
   }
 
+  console.log(boardColor)
+
   return (
-    <div className='app green'>
+    <div 
+      className='app green'
+      style={boardColor}
+    >
       <Header/>
-      <Toolbar/>
+      <Toolbar 
+        setActiveMenu={setActiveMenu}
+        activeMenu={activeMenu}
+      />
       <Table 
         data={data}
         addNewCard={addNewCard}
         addNewTask={(textareaValue, id) => addNewTask(textareaValue, id)}
+        activeMenu={activeMenu}
+        setActiveMenu={setActiveMenu}
+        bgColorCol={bgColorCol}
+        boardColor={boardColor}
+        setBoardColor={setBoardColor}
       />
     </div>
   )

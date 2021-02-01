@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 
 import Card from '../card';
 import TableMenu from '../table-menu';
@@ -6,7 +6,7 @@ import TableMenu from '../table-menu';
 import './table.css';
 import './create-card.css';
 
-const Table = ({data, addNewCard, addNewTask}) => {
+const Table = ({data, addNewCard, addNewTask, activeMenu, setActiveMenu, bgColorCol, setBoardColor, boardColor}) => {
 
   const [isActive, setIsActive] = useState(false);
   const [label, setLabel] = useState('');
@@ -22,14 +22,24 @@ const Table = ({data, addNewCard, addNewTask}) => {
     }
     addNewCard(label)
     setLabel('');
-    setIsActive(false);
   }
+
+  useEffect(() => {
+    if (!document.querySelector('.create-card__input')) {
+      return
+    }
+    document.querySelector('.create-card__input').focus();
+  }, [isActive, label])
 
   const clazz = isActive ? ' active' : '';
 
+  const styleWrapper = activeMenu ? ' activeMenu' : ''
+
   return (
     <div className='table'>
-      <div className='table__wrapper'>
+      <div 
+        className={`table__wrapper${styleWrapper}`}
+      >
         {data.map((item) => (
           <Card
             label={item.label}
@@ -80,7 +90,13 @@ const Table = ({data, addNewCard, addNewTask}) => {
             )}
         </div>
       </div>
-      <TableMenu/>
+      <TableMenu
+        activeMenu={activeMenu}
+        setActiveMenu={setActiveMenu}
+        bgColorCol={bgColorCol}
+        setBoardColor={setBoardColor}
+        boardColor={boardColor}
+      />
     </div>
   )
 }

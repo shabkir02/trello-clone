@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 
 import './card.css';
 
@@ -19,6 +19,13 @@ const Card = ({label, tasks, id, addNewTask}) => {
     addNewTask(textareaValue, id);
     setTextareaValue('');
   }
+
+  useEffect(() => {
+    if (!document.querySelector('.card__add-textarea')) {
+      return
+    }
+    document.querySelector('.card__add-textarea').focus();
+  }, [isActive, textareaValue])
 
   return (
     <div className='card'>

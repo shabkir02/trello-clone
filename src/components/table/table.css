@@ -18,5 +18,7 @@
   bottom: 0;
   left: 0;
   white-space: nowrap;
+}
+.table__wrapper.activeMenu {
   margin-right: 300px;
 }
