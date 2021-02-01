@@ -2,7 +2,10 @@ import React from 'react';
 
 import './toolbar.css';
 
-const Toolbar = () => {
+const Toolbar = ({setActiveMenu, activeMenu}) => {
+
+  const hover = activeMenu ? {backgroundColor: ' rgba(255, 255, 255, .5)'} : null
+
   return (
     <div className='toolbar'>
       <div className='toolbar__left'>
@@ -34,7 +37,11 @@ const Toolbar = () => {
           &nbsp;
           Календарь
         </div>
-        <div className='toolbar__item'>
+        <div 
+          style={hover}
+          className='toolbar__item'
+          onClick={() => setActiveMenu(!activeMenu)}
+        >
           <span className="material-icons">
             more_horiz
           </span>
